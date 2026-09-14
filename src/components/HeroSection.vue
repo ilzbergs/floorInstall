@@ -1,63 +1,40 @@
 <template>
-  <section
-    class="relative bg-cover bg-center"
-    style="background-image: url('../../public/images/hero.jpg')"
-  >
-    <!-- Overlay: tumšs gradient, lai kontrasts būtu labs -->
-    <div class="absolute inset-0 bg-linear-to-t from-black/70 to-black/30"></div>
+  <section class="relative isolate min-h-[610px] overflow-hidden bg-[#242321]">
+    <img
+      src="/images/hero.jpg"
+      alt="Kvalitatīvi ieklāta koka grīda"
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+    <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(22,21,19,.94)_0%,rgba(22,21,19,.82)_38%,rgba(22,21,19,.28)_72%,rgba(22,21,19,.08)_100%)]"></div>
 
-    <div class="relative max-w-7xl mx-auto px-4 py-20 text-center">
-      <!-- Virsraksts -->
-      <h1 class="text-3xl sm:text-4xl font-bold text-[#F5E6C4] font-heading drop-shadow-md">
-        Parketa un vinila ieklāšana Rīgā un Latvijā
-      </h1>
+    <div class="relative mx-auto flex min-h-[610px] max-w-7xl items-center px-5 py-20 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-[#C9A47D]">
+          Grīdu ieklāšana un restaurācija
+        </p>
+        <h1 class="text-5xl font-semibold leading-[1.03] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
+          Kvalitatīvas grīdas<br />
+          <span class="text-[#C9A47D]">jaunām iespējām.</span>
+        </h1>
+        <p class="mt-7 max-w-xl text-lg leading-8 text-white/78">
+          Parketa un vinila ieklāšana, grīdu sagatavošana un restaurācija Rīgā, Pierīgā un visā Latvijā.
+        </p>
 
-      <!-- Apraksts -->
-      <p class="mt-6 max-w-3xl mx-auto text-[#FBEEDC] leading-relaxed drop-shadow-sm">
-        FloorInstall piedāvā profesionālu parketa un vinila grīdu ieklāšanu dzīvokļos, privātmājās
-        un komerctelpās. Strādājam precīzi, tīri un ar atbildību, nodrošinot kvalitatīvu un
-        ilgmūžīgu rezultātu.
-      </p>
-
-      <p class="mt-4 max-w-3xl mx-auto text-[#FBEEDC] leading-relaxed drop-shadow-sm">
-        Mūsu pieredze ļauj piemeklēt piemērotāko risinājumu katram objektam, ņemot vērā telpas
-        specifiku, grīdas pamatni un klienta vēlmes. Strādājam Rīgā, Pierīgā un visā Latvijā.
-      </p>
-
-      <!-- Priekšrocības -->
-      <ul class="mt-8 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-        <li class="flex gap-3 text-[#F5E6C4] font-medium">
-          <span class="text-[#D8B58A] font-bold drop-shadow-md">✔</span>
-          <span>Vairāku gadu pieredze grīdu ieklāšanā</span>
-        </li>
-        <li class="flex gap-3 text-[#F5E6C4] font-medium">
-          <span class="text-[#D8B58A] font-bold drop-shadow-md">✔</span>
-          <span>Darbs ar kvalitatīviem materiāliem</span>
-        </li>
-        <li class="flex gap-3 text-[#F5E6C4] font-medium">
-          <span class="text-[#D8B58A] font-bold drop-shadow-md">✔</span>
-          <span>Precīza tāme bez slēptām izmaksām</span>
-        </li>
-        <li class="flex gap-3 text-[#F5E6C4] font-medium">
-          <span class="text-[#D8B58A] font-bold drop-shadow-md">✔</span>
-          <span>Tīra un kārtīga darba vide</span>
-        </li>
-        <li class="flex gap-3 sm:col-span-2 text-[#F5E6C4] font-medium">
-          <span class="text-[#D8B58A] font-bold drop-shadow-md">✔</span>
-          <span>Individuāla pieeja katram klientam</span>
-        </li>
-      </ul>
-
-      <!-- CTA -->
-      <div class="mt-12">
-        <button
-          class="px-8 py-3 rounded font-semibold transition bg-[#8B5E3C] hover:bg-[#6F4528] text-white shadow-lg"
-        >
-          Saņemt piedāvājumu
-        </button>
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <router-link
+            to="/contact"
+            class="inline-flex items-center justify-center gap-3 rounded-xl bg-[#A47D58] px-6 py-3.5 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#8B6747]"
+          >
+            Saņemt piedāvājumu <span>→</span>
+          </router-link>
+          <router-link
+            to="/gallery"
+            class="inline-flex items-center justify-center rounded-xl border border-white/45 bg-black/15 px-6 py-3.5 font-semibold text-white backdrop-blur-sm transition hover:bg-white hover:text-[#242321]"
+          >
+            Apskatīt darbus
+          </router-link>
+        </div>
       </div>
     </div>
   </section>
 </template>
-
-<script setup lang="ts"></script>
