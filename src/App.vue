@@ -1,15 +1,9 @@
 <template>
-  <div class="flex flex-col min-h-screen">
-
-    <!-- Header -->
-    <Header class="sticky top-0 z-50 bg-[#D6C4A8]" />
-
-    <!-- Main content -->
+  <div class="flex min-h-screen flex-col">
+    <Header />
     <main class="flex-1">
       <router-view />
     </main>
-
-    <!-- Footer ar cookie consent -->
     <Footer />
   </div>
 </template>
@@ -20,11 +14,14 @@ import Footer from './components/Footer.vue'
 </script>
 
 <style>
-/* Ja nepieciešams, global styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Lora', serif; /* piemērs koka / parketa noskaņai */
-  background-color: #F5F1E8; /* gaišs fona tonis parketa stilā */
+html { scroll-behavior: smooth; }
+html, body, #app { margin: 0; min-height: 100%; }
+body {
+  background: #f8f5ef;
+  color: #262421;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+a { text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
 </style>
