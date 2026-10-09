@@ -1,11 +1,13 @@
 <template>
   <section ref="hero" class="hero relative isolate min-h-[680px] overflow-hidden bg-[#242321]">
     <img
-      src="/images/hero.jpg"
+      :src="publicAsset('/images/hero.jpg')"
       alt="Kvalitatīvi ieklāta koka grīda"
+      fetchpriority="high"
+      decoding="async"
       class="hero-image absolute inset-0 h-[112%] w-full object-cover"
     />
-    <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(22,21,19,.94)_0%,rgba(22,21,19,.82)_38%,rgba(22,21,19,.28)_72%,rgba(22,21,19,.08)_100%)]"></div>
+    <div class="hero-overlay absolute inset-0"></div>
 
     <div class="relative mx-auto flex min-h-[610px] max-w-7xl items-center px-5 py-20 lg:px-8">
       <div class="hero-copy max-w-2xl">
@@ -40,6 +42,7 @@
 </template>
 
 <script setup lang="ts">
+import { publicAsset } from '@/utils/publicAsset'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const hero = ref<HTMLElement | null>(null)
@@ -64,11 +67,23 @@ onBeforeUnmount(() => window.removeEventListener('scroll', updateHero))
   transform: translateY(calc(var(--hero-progress, 0) * 7%)) scale(calc(1 + var(--hero-progress, 0) * .04));
   will-change: transform;
 }
+.hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(22, 21, 19, .12) 0%, rgba(22, 21, 19, .22) 42%, rgba(22, 21, 19, .58) 100%),
+    linear-gradient(90deg, rgba(22, 21, 19, .7) 0%, rgba(22, 21, 19, .58) 58%, rgba(22, 21, 19, .28) 100%);
+}
 .hero-copy { transform: translateY(calc(var(--hero-progress, 0) * 52px)); opacity: calc(1 - var(--hero-progress, 0) * .85); }
+.hero-copy { text-shadow: 0 2px 18px rgba(22, 21, 19, .35); }
 .hero-reveal { animation: reveal .85s cubic-bezier(.2,.75,.25,1) both; }
 .hero-reveal:nth-child(2) { animation-delay: .08s; }
 .hero-reveal:nth-child(3) { animation-delay: .16s; }
 .hero-reveal:nth-child(4) { animation-delay: .24s; }
 @keyframes reveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@media (min-width: 640px) {
+  .hero-overlay {
+    background: linear-gradient(90deg, rgba(22,21,19,.94) 0%, rgba(22,21,19,.82) 38%, rgba(22,21,19,.28) 72%, rgba(22,21,19,.08) 100%);
+  }
+  .hero-copy { text-shadow: none; }
+}
 @media (prefers-reduced-motion: reduce) { .hero-image, .hero-copy { transform: none; opacity: 1; } .hero-reveal { animation: none; } }
 </style>

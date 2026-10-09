@@ -1,111 +1,78 @@
 <template>
-  <footer class="w-full bg-[#E8DCC2] text-[#5C3A21] font-body shadow mt-4">
-    <!-- Kontaktinformācija + Rekvizīti -->
-    <div
-      class="max-w-7xl mx-auto px-4 py-6 flex flex-col sm:flex-row sm:justify-between gap-6 border-b border-[#CBB892]"
-    >
-      <div class="flex flex-col gap-1">
-        <h4 class="font-heading font-bold text-lg">Kontakti</h4>
-        <p><a href="tel:+37122063849" class="hover:text-[#A9745B]">+371 22063849</a></p>
-        <p>
-          <a href="mailto:info@floorinstall.lv" class="hover:text-[#A9745B]"
-            >info@floorinstall.lv</a
-          >
-        </p>
-      </div>
-      <div class="flex flex-col gap-1">
-        <h4 class="font-heading font-bold text-lg">Rekvizīti</h4>
-        <p>Uzņēmums: FloorInstall, SIA</p>
-        <p>Reģ. nr.: 40203696793</p>
-        <p>Jur.adrese: Stirnu iela 43-22, Rīga, Latvija, LV-1084</p>
-        <p>Bankas konts: LV87HABA0551063348957</p>
-      </div>
-    </div>
-
-    <!-- Ātrās saites + sociālie tīkli -->
-    <div
-      class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4"
-    >
-      <ul class="flex flex-col sm:flex-row gap-4">
-        <li><router-link class="hover:text-[#A9745B]" to="/">Sākums</router-link></li>
-        <li><router-link class="hover:text-[#A9745B]" to="/services">Pakalpojumi</router-link></li>
-        <li><router-link class="hover:text-[#A9745B]" to="/gallery">Galerija</router-link></li>
-      </ul>
-
-      <div class="flex gap-3">
-        <!-- Facebook -->
-        <a
-          href="https://www.facebook.com/floorinstall.lv/"
-          target="_blank"
-          rel="noopener"
-          class="flex items-center justify-center w-auto h-10 bg-[#1877F2] text-white rounded hover:bg-[#0F4EC9] transition px-4 gap-2"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54V12h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-            />
-          </svg>
-          <span class="hidden sm:inline text-white font-medium">Facebook</span>
-        </a>
-
-        <!-- WhatsApp -->
-        <a
-          href="https://wa.me/37122063849"
-          target="_blank"
-          rel="noopener"
-          class="flex items-center justify-center w-auto h-10 bg-[#1E9E57] text-white rounded hover:bg-[#157A42] transition px-4 gap-2"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M17.472 14.382c-.297-.149-1.758-.868-2.031-.968-.273-.099-.472-.149-.671.149s-.771.968-.944 1.168c-.173.199-.347.224-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.786-1.48-1.754-1.653-2.052-.173-.298-.018-.459.13-.608.134-.133.298-.347.446-.521.149-.173.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.671-1.611-.919-2.211-.242-.579-.487-.5-.671-.51l-.573-.01c-.198 0-.521.074-.794.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.26.489 1.69.625.71.227 1.356.195 1.867.118.571-.085 1.758-.719 2.006-1.412.248-.694.248-1.29.173-1.412-.074-.124-.272-.198-.57-.347z"
-            />
-          </svg>
-          <span class="hidden sm:inline">WhatsApp</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Copyright -->
-    <div class="w-full border-t border-[#CBB892] mt-4 pt-4 text-center text-sm">
-      <p class="mb-3">© {{ new Date().getFullYear() }} FloorInstall. Visas tiesības aizsargātas.</p>
-      <nav class="flex flex-wrap justify-center gap-4 sm:gap-6">
-        <router-link to="/privacy-policy" class="hover:text-[#A9745B] transition"
-          >Privātuma politika</router-link
-        >
-        <span class="text-[#CBB892]">|</span>
-        <router-link to="/terms" class="hover:text-[#A9745B] transition">Noteikumi</router-link>
-      </nav>
-    </div>
-
-    <!-- Cookie consent banner -->
-    <div
-      v-if="!hasCookiesDecision"
-      class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[#F5F1E8] border border-[#CBB892] px-4 py-3 rounded shadow flex flex-col sm:flex-row sm:items-center gap-3 max-w-xl z-50"
-    >
-      <p class="text-sm flex-1">
-        Mēs izmantojam sīkdatnes, lai uzlabotu lietotāja pieredzi un analītiku.
-      </p>
-      <div class="flex gap-2">
-        <router-link
-          to="/privacy-policy"
-          class="underline text-[#5C3A21] hover:text-[#A9745B] text-sm"
-        >
-          Privātuma politika
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-intro">
+        <div>
+          <p class="footer-eyebrow">No ieceres līdz gatavai grīdai</p>
+          <h2>Pārrunāsim jūsu projektu.</h2>
+        </div>
+        <router-link to="/contact" class="footer-cta">
+          Saņemt piedāvājumu <span aria-hidden="true">↗</span>
         </router-link>
-        <button
-          @click="acceptCookies"
-          class="bg-[#5C3A21] text-white px-3 py-1 rounded hover:bg-[#A9745B] text-sm"
-        >
-          Piekrītu
-        </button>
-        <button
-          @click="declineCookies"
-          class="bg-gray-400 text-white px-3 py-1 rounded hover:bg-gray-500 text-sm"
-        >
-          Nepiekrītu
-        </button>
+      </div>
+
+      <div class="footer-columns">
+        <div class="footer-brand">
+          <router-link to="/" class="footer-logo" aria-label="FloorInstall — sākumlapa">
+            <img src="../assets/logo.svg" alt="FloorInstall" width="215" height="48" />
+          </router-link>
+          <p>Parketa un vinila ieklāšana,<br />grīdu sagatavošana un restaurācija.</p>
+          <p class="footer-area">Rīga, Pierīga un visa Latvija</p>
+        </div>
+
+        <div>
+          <h3>Sazinieties ar mums</h3>
+          <address class="footer-contact">
+            <a href="tel:+37122063849" class="footer-phone">+371 22 063 849</a>
+            <a href="mailto:info@floorinstall.lv">info@floorinstall.lv</a>
+          </address>
+          <div class="footer-socials">
+            <a href="https://wa.me/37122063849" target="_blank" rel="noopener noreferrer">
+              WhatsApp <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://www.facebook.com/floorinstall.lv/" target="_blank" rel="noopener noreferrer">
+              Facebook <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <nav aria-label="Kājenes navigācija">
+          <h3>Noderīgas saites</h3>
+          <ul class="footer-links">
+            <li><router-link to="/">Sākums</router-link></li>
+            <li><router-link to="/services">Pakalpojumi</router-link></li>
+            <li><router-link to="/gallery">Galerija</router-link></li>
+            <li><router-link to="/contact">Kontakti</router-link></li>
+          </ul>
+        </nav>
+
+        <div class="footer-company">
+          <h3>Uzņēmuma rekvizīti</h3>
+          <p class="company-name">FloorInstall, SIA</p>
+          <dl>
+            <div><dt>Reģistrācijas numurs</dt><dd>40203696793</dd></div>
+            <div><dt>Juridiskā adrese</dt><dd>Stirnu iela 43-22, Rīga,<br />Latvija, LV-1084</dd></div>
+            <div><dt>Bankas konts</dt><dd class="footer-iban">LV87HABA0551063348957</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© {{ new Date().getFullYear() }} FloorInstall. Visas tiesības aizsargātas.</p>
+        <nav aria-label="Juridiskā informācija">
+          <router-link to="/privacy-policy">Privātuma politika</router-link>
+          <router-link to="/terms">Noteikumi</router-link>
+        </nav>
       </div>
     </div>
+
+    <section v-if="!hasCookiesDecision" class="cookie-notice" aria-label="Informācija par vietējo saglabāšanu">
+      <p>Šī lapa neizmanto reklāmas vai analītikas izsekošanu. Pārlūkprogrammā saglabājam tikai šī paziņojuma aizvēršanu.</p>
+      <router-link to="/privacy-policy" class="cookie-policy">Privātuma politika</router-link>
+      <div class="cookie-actions">
+        <button type="button" @click="dismissNotice" class="cookie-accept">Sapratu</button>
+      </div>
+    </section>
   </footer>
 </template>
 
@@ -115,17 +82,69 @@ import { ref, onMounted } from 'vue'
 const hasCookiesDecision = ref(false)
 
 onMounted(() => {
-  const decision = localStorage.getItem('cookiesDecision')
-  if (decision) hasCookiesDecision.value = true
+  try {
+    hasCookiesDecision.value = Boolean(localStorage.getItem('cookiesDecision'))
+  } catch {
+    // Browser storage can be disabled.
+  }
 })
 
-const acceptCookies = () => {
-  localStorage.setItem('cookiesDecision', 'accept')
-  hasCookiesDecision.value = true
-}
-
-const declineCookies = () => {
-  localStorage.setItem('cookiesDecision', 'decline')
+const dismissNotice = () => {
+  try {
+    localStorage.setItem('cookiesDecision', 'dismissed')
+  } catch {
+    // The notice can still be closed without persistent storage.
+  }
   hasCookiesDecision.value = true
 }
 </script>
+
+<style scoped>
+.site-footer { background: #242321; color: #d3cec6; text-align: left; }
+.footer-inner { max-width: 80rem; margin: 0 auto; padding: 0 2rem; }
+.footer-intro { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 3.5rem 0; border-bottom: 1px solid #ffffff1f; }
+.footer-eyebrow { margin-bottom: .8rem; color: #c9a47d; font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.footer-intro h2 { color: #f8f5ef; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 600; line-height: 1.2; letter-spacing: -.03em; }
+.footer-cta { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 1.5rem; border: 1px solid #b7926d; border-radius: .75rem; padding: 1rem 1.4rem; color: #f8f5ef; font-weight: 600; transition: background .2s; }
+.footer-cta:hover { background: #98724f; }
+.footer-columns { display: grid; grid-template-columns: 1.1fr 1fr .8fr 1.2fr; gap: 2.5rem; padding: 3.5rem 0; }
+.footer-columns h3 { margin-bottom: 1.4rem; color: #f8f5ef; font-size: .8rem; font-weight: 600; }
+.footer-logo { display: inline-flex; align-items: center; justify-content: center; border-radius: .75rem; background: #f8f5ef; padding: .65rem .9rem; margin-bottom: 1.2rem; }
+.footer-logo img { width: 13.5rem; height: auto; }
+.footer-brand p { font-size: .85rem; line-height: 1.85; }
+.footer-brand .footer-area { margin-top: 1rem; color: #c9a47d; font-size: .75rem; }
+.footer-contact { display: flex; flex-direction: column; gap: .65rem; font-size: .9rem; font-style: normal; }
+.footer-contact .footer-phone { color: #f8f5ef; font-size: 1.2rem; font-weight: 600; white-space: nowrap; }
+.footer-socials { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.4rem; }
+.footer-socials a { display: inline-flex; gap: .5rem; padding: .6rem .7rem; border: 1px solid #ffffff26; border-radius: .5rem; font-size: .75rem; }
+.footer-socials a:hover { border-color: #c9a47d; }
+.footer-links { display: grid; gap: .8rem; font-size: .85rem; list-style: none; padding: 0; }
+.footer-company { font-size: .8rem; line-height: 1.6; }
+.company-name { margin-bottom: 1rem; color: #f8f5ef; font-weight: 600; }
+.footer-company dl { display: grid; gap: .8rem; }
+.footer-company dt { color: #a7a198; font-size: .7rem; margin-bottom: .15rem; }
+.footer-company dd { margin: 0; }
+.footer-iban { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid #ffffff1f; padding: 1.5rem 0; color: #a7a198; font-size: .75rem; line-height: 1.6; }
+.footer-bottom nav { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+a { transition: color .2s; }
+a:hover { color: #e6c4a1; }
+a:focus-visible, button:focus-visible { outline: 2px solid #c9a47d; outline-offset: 5px; }
+.cookie-notice { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 60; width: min(32rem, calc(100% - 2rem)); padding: 1.25rem; border: 1px solid #d8cebf; border-radius: 1rem; background: #f8f5ef; color: #3d3934; box-shadow: 0 12px 50px #0003; font-size: .85rem; line-height: 1.6; }
+.cookie-policy { display: inline-block; margin-top: .6rem; text-decoration: underline; color: #745232; }
+.cookie-policy:hover { color: #3d3934; }
+.cookie-actions { display: flex; gap: .75rem; margin-top: 1rem; }
+.cookie-actions button { flex: 1; padding: .65rem 1rem; border: 1px solid #b7a895; border-radius: .5rem; cursor: pointer; font-weight: 600; }
+.cookie-actions button:hover { background: #e8e1d6; }
+.cookie-actions .cookie-accept { background: #7f5d3e; border-color: #7f5d3e; color: white; }
+.cookie-actions .cookie-accept:hover { background: #63472e; }
+@media (max-width: 1100px) { .footer-columns { grid-template-columns: 1fr 1fr; gap: 2.5rem 3rem; } }
+@media (max-width: 600px) {
+  .footer-inner { padding: 0 1.25rem; }
+  .footer-intro { align-items: flex-start; flex-direction: column; padding: 2.5rem 0; gap: 1.5rem; }
+  .footer-cta { width: 100%; }
+  .footer-columns { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 0; }
+  .footer-columns h3 { margin-bottom: 1rem; }
+  .footer-bottom { flex-direction: column; padding: 1.5rem 0 2rem; }
+}
+</style>

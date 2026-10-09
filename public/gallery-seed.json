@@ -1,0 +1,77 @@
+[
+  {
+    "id": "ozola-parkets-24cm",
+    "title": "Ozola parketa ieklāšana un grīdlīstu apdare",
+    "summary": "24 cm plats divslāņu ozola parkets, baltas grīdlīstes un pielāgota pakāpiena apdare.",
+    "description": "Veikta pamatnes sagatavošana ar OSB plāksnēm un 24 cm plata divslāņu ozola parketa līmēšana. Uzstādītas baltas grīdlīstes un veikta pakāpiena apdare ap esošo koka konstrukciju. Attēlos redzami darba posmi — no pamatnes sagatavošanas līdz ieklātam parketam un noslēdzošajām apdares detaļām.",
+    "flooring": "24 cm plats divslāņu ozola parkets",
+    "work": [
+      "Pamatnes sagatavošana ar OSB plāksnēm",
+      "Parketa līmēšana",
+      "Balto grīdlīstu uzstādīšana",
+      "Pakāpiena apdare"
+    ],
+    "categories": [
+      "Parkets",
+      "Grīdlīstes"
+    ],
+    "published": true,
+    "cover": "/images/projects/ozola-parkets-24cm/IMG_20261008_111238.jpg",
+    "photos": [
+      {
+        "src": "/images/projects/ozola-parkets-24cm/IMG_20261008_111238.jpg",
+        "alt": "Gatavais parkets un baltās grīdlīstes",
+        "caption": "Gatavais parkets un baltās grīdlīstes",
+        "stage": "Rezultāts"
+      },
+      {
+        "src": "/images/projects/ozola-parkets-24cm/IMG_20260915_162132.jpg",
+        "alt": "Parketa ieklājums telpā",
+        "caption": "Parketa ieklājums telpā",
+        "stage": "Rezultāts"
+      },
+      {
+        "src": "/images/projects/ozola-parkets-24cm/IMG_20261008_111225.jpg",
+        "alt": "Apdare pie balkona durvīm",
+        "caption": "Apdare pie balkona durvīm",
+        "stage": "Rezultāts"
+      },
+      {
+        "src": "/images/projects/ozola-parkets-24cm/IMG_20261008_095254.jpg",
+        "alt": "Grīdlīstu stūra savienojums",
+        "caption": "Grīdlīstu stūra savienojums",
+        "stage": "Rezultāts"
+      },
+      {
+        "src": "/images/projects/ozola-parkets-24cm/IMG_20261008_111115.jpg",
+        "alt": "Pakāpiena apdare ap koka konstrukciju",
+        "caption": "Pakāpiena apdare ap koka konstrukciju",
+        "stage": "Rezultāts"
+      },
+      {
+        "src": "/images/projects/ozola-parkets-24cm/IMG_20260915_162419.jpg",
+        "alt": "Parketa savienojums pie durvju ailes",
+        "caption": "Parketa savienojums pie durvju ailes",
+        "stage": "Rezultāts"
+      },
+      {
+        "src": "/images/projects/ozola-parkets-24cm/IMG_20260915_092922.jpg",
+        "alt": "Ozola parketa virsmas tuvplāns",
+        "caption": "Ozola parketa virsmas tuvplāns",
+        "stage": "Rezultāts"
+      },
+      {
+        "src": "/images/projects/ozola-parkets-24cm/IMG_20260914_124213.jpg",
+        "alt": "Parketa līmēšana uz sagatavotās pamatnes",
+        "caption": "Parketa līmēšana uz sagatavotās pamatnes",
+        "stage": "Darba laikā"
+      },
+      {
+        "src": "/images/projects/ozola-parkets-24cm/IMG_20260908_093446.jpg",
+        "alt": "Pamatnes sagatavošana ar OSB plāksnēm",
+        "caption": "Pamatnes sagatavošana ar OSB plāksnēm",
+        "stage": "Darba laikā"
+      }
+    ]
+  }
+]
