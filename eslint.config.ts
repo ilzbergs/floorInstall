@@ -14,6 +14,13 @@ export default defineConfigWithVueTs(
     files: ['**/*.{vue,ts,mts,tsx}'],
   },
 
+  {
+    name: 'app/vue-rules',
+    rules: {
+      'vue/multi-word-component-names': ['error', { ignores: ['Home', 'Header', 'Footer', 'Contact', 'Gallery', 'Services', 'Terms'] }],
+    },
+  },
+
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
 
   ...pluginVue.configs['flat/essential'],

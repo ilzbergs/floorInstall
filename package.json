@@ -13,9 +13,12 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix --cache",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "build:github": "npm run type-check && vite build --mode github && node scripts/prepare-pages.mjs"
   },
   "dependencies": {
+    "@vueuse/motion": "^3.0.3",
+    "swiper": "^12.0.3",
     "vue": "^3.5.26",
     "vue-router": "^4.6.4"
   },

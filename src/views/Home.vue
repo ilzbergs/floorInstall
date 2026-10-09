@@ -14,33 +14,14 @@
       </div>
     </section>
 
-    <section class="reveal mx-auto max-w-7xl px-5 py-20 lg:px-8">
-      <div class="mb-10 flex items-end justify-between gap-6">
-        <div>
-          <p class="eyebrow">Mūsu pakalpojumi</p>
-          <h2 class="section-title">Kompleksi grīdu risinājumi</h2>
-        </div>
-        <router-link to="/services" class="hidden font-semibold text-[#7F5D3E] hover:underline sm:block">
-          Skatīt visus pakalpojumus →
-        </router-link>
-      </div>
+    <div class="reveal mx-auto max-w-7xl px-5 pb-20 text-center lg:px-8">
+      <ServiceSectionCard :services="featuredServices" />
+      <router-link to="/services" class="inline-flex font-semibold text-[#7F5D3E] hover:underline">
+        Skatīt visus pakalpojumus →
+      </router-link>
+    </div>
 
-      <div class="grid gap-5 md:grid-cols-3">
-        <article v-for="service in services" :key="service.title" class="service-card group">
-          <img src="/images/hero.jpg" :alt="service.title" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
-          <div class="relative mt-auto flex items-end justify-between gap-5 p-6">
-            <div>
-              <h3 class="text-2xl font-semibold text-white">{{ service.title }}</h3>
-              <p class="mt-2 max-w-xs text-sm leading-6 text-white/75">{{ service.text }}</p>
-            </div>
-            <router-link to="/services" class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-xl text-black transition group-hover:translate-x-1">→</router-link>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="overflow-hidden bg-[#242321] py-24 text-white">
+    <section class="bg-[#242321] py-24 text-white">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div class="reveal max-w-2xl">
           <p class="eyebrow">No pamatnes līdz rezultātam</p>
@@ -48,18 +29,18 @@
         </div>
 
         <div class="mt-14 grid gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-start">
-          <div class="reveal sticky top-24 overflow-hidden rounded-[1.5rem] bg-[#3a3834]">
-            <img src="/images/hero.jpg" alt="Grīdas ieklāšanas process" class="aspect-[4/3] w-full object-cover opacity-80" />
+          <div class="process-image sticky top-24 hidden self-start overflow-hidden rounded-[1.5rem] bg-[#3a3834] lg:block">
+            <img :src="currentStep.image" :alt="currentStep.title" width="1448" height="1086" decoding="async" class="aspect-[4/3] max-h-[calc(100dvh-7rem)] w-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-            <div class="floor-grid absolute inset-0 opacity-0 transition-opacity duration-700" :class="activeStep >= 2 ? '!opacity-40' : ''"></div>
             <div class="absolute bottom-0 left-0 p-7 sm:p-10">
-              <span class="text-xs font-bold uppercase tracking-[.24em] text-[#D2AF8A]">{{ steps[activeStep].number }}</span>
-              <p class="mt-2 text-2xl font-semibold sm:text-3xl">{{ steps[activeStep].title }}</p>
+              <span class="text-xs font-bold uppercase tracking-[.24em] text-[#D2AF8A]">{{ currentStep.number }}</span>
+              <p class="mt-2 text-2xl font-semibold sm:text-3xl">{{ currentStep.title }}</p>
             </div>
           </div>
 
-          <div class="space-y-4">
-            <article v-for="(step, index) in steps" :key="step.number" :data-step="index" class="process-step min-h-[38vh] rounded-2xl border p-6 transition-all duration-500 sm:p-8" :class="activeStep === index ? 'border-[#A47D58] bg-white/8' : 'border-white/10 bg-white/[.025] opacity-55'">
+          <div ref="processSteps" class="space-y-4">
+            <article v-for="(step, index) in steps" :key="step.number" :data-step="index" class="process-step lg:min-h-[60vh] rounded-2xl border p-6 transition-all duration-500 sm:p-8" :class="activeStep === index ? 'border-[#A47D58] bg-white/8' : 'border-white/10 bg-white/[.025] lg:opacity-55'">
+              <img :src="step.image" :alt="step.title" width="1448" height="1086" loading="lazy" decoding="async" class="mb-6 aspect-[4/3] w-full rounded-xl object-cover lg:hidden" />
               <span class="text-xs font-bold tracking-[.22em] text-[#C9A47D]">{{ step.number }}</span>
               <h3 class="mt-5 text-2xl font-semibold">{{ step.title }}</h3>
               <p class="mt-3 max-w-md leading-7 text-white/60">{{ step.text }}</p>
@@ -69,7 +50,7 @@
       </div>
     </section>
 
-    <section id="par-mums" class="reveal bg-white py-20">
+    <section id="musu-darbi" class="reveal bg-white py-20">
       <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8">
         <div>
           <p class="eyebrow">Mūsu darbi</p>
@@ -79,31 +60,88 @@
           </p>
           <router-link to="/gallery" class="mt-7 inline-flex font-semibold text-[#7F5D3E] hover:underline">Apskatīt galeriju →</router-link>
         </div>
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <div v-for="n in 4" :key="n" class="overflow-hidden rounded-2xl bg-[#E8E1D6]" :class="n % 2 === 0 ? 'sm:translate-y-5' : ''">
-            <img src="/images/hero.jpg" alt="FloorInstall paveiktais darbs" class="aspect-[4/5] h-full w-full object-cover transition duration-500 hover:scale-105" :style="{ objectPosition: `${20 + n * 15}% center` }" />
+        <GalleryItem class="min-w-0" />
+      </div>
+    </section>
+
+    <section id="par-mums" class="reveal overflow-hidden bg-[#F5F0E1] py-20 sm:py-24">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
+        <div>
+          <p class="eyebrow">Par FloorInstall</p>
+          <h2 class="section-title text-[#5C3A21]">Pieredze, kurai var uzticēties.</h2>
+          <p class="mt-6 max-w-2xl leading-8 text-[#5C3A21]/70">
+            FloorInstall ir grīdas segumu ieklāšanas uzņēmums ar vairāk nekā 15 gadu pieredzi Latvijā un starptautiskos projektos. Uzņēmums izveidots ar vienu mērķi — nodrošināt kvalitatīvu, precīzu un ilgtspējīgu grīdas segumu ieklāšanu.
+          </p>
+          <p class="mt-4 max-w-2xl leading-8 text-[#5C3A21]/70">
+            Mēs strādājam ātri, rūpīgi un atbildīgi, piedāvājot godīgu cenu, skaidru komunikāciju un garantiju paveiktajam darbam. No pirmās konsultācijas līdz pēdējai apdares detaļai — par rezultātu rūpējamies paši.
+          </p>
+          <router-link to="/contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#98724F] px-5 py-3.5 font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#7F5D3E]">
+            Sazinies ar mums <span aria-hidden="true">→</span>
+          </router-link>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-[1.35rem] bg-[#2A2926] p-6 text-white shadow-[0_18px_40px_-28px_rgba(42,30,18,.8)] sm:p-7">
+            <strong class="block text-4xl font-semibold text-[#E4BD91]">15+</strong>
+            <span class="mt-2 block text-sm leading-6 text-white/65">Gadu pieredze grīdas segumu jomā</span>
+          </div>
+          <div class="rounded-[1.35rem] border border-[#D8C6AF] bg-white/70 p-6 text-[#5C3A21] sm:p-7">
+            <strong class="block text-2xl font-semibold">Visa Latvija</strong>
+            <span class="mt-2 block text-sm leading-6 text-[#5C3A21]/60">Strādājam arī starptautiskos projektos</span>
+          </div>
+          <div class="rounded-[1.35rem] border border-[#D8C6AF] bg-white/70 p-6 text-[#5C3A21] sm:col-span-2 sm:p-7">
+            <p class="text-xs font-bold uppercase tracking-[.2em] text-[#98724F]">Mūsu solījums</p>
+            <p class="mt-3 text-xl font-semibold leading-8">Ātrs, kvalitatīvs un garantēts darbs par godīgu cenu.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="stats-section reveal bg-[#242321] text-white">
-      <div class="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-center lg:px-8">
-        <div><strong class="block text-3xl">{{ clients }}+</strong><span class="text-sm text-white/55">Apmierinātu klientu</span></div>
+      <div class="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:grid-cols-3 lg:items-center lg:px-8">
         <div><strong class="block text-3xl">{{ years }}+</strong><span class="text-sm text-white/55">Gadu pieredze</span></div>
-        <div><strong class="block text-3xl">Visa Latvija</strong><span class="text-sm text-white/55">Rīga, Pierīga un reģioni</span></div>
-        <router-link to="/contact" class="rounded-xl bg-[#A47D58] px-6 py-3.5 text-center font-semibold transition hover:bg-[#8B6747]">Saņemt piedāvājumu →</router-link>
+        <div><strong class="block text-3xl">Visa Latvija</strong><span class="text-sm text-white/55">Strādājam arī ārzemēs</span></div>
+        <div><strong class="block text-3xl">Garantija</strong><span class="text-sm text-white/55">Paveiktajam darbam</span></div>
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { publicAsset } from '@/utils/publicAsset'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import HeroSection from '../components/HeroSection.vue'
+import ServiceSectionCard from '../components/ServiceSectionCard.vue'
+import GalleryItem from '../components/GalleryItem.vue'
+import { featuredServices } from '../data/services'
 
 const activeStep = ref(0)
-const clients = ref(0)
+const processSteps = ref<HTMLElement | null>(null)
+let processFrame = 0
+let processResizeObserver: ResizeObserver | undefined
+
+// Select from the current geometry, not the delivery order of intersection events.
+const updateActiveStep = () => {
+  processFrame = 0
+  const cards = processSteps.value?.querySelectorAll<HTMLElement>('.process-step')
+  if (!cards?.length) return
+  const focusY = window.innerHeight * 0.5
+  let nearest = 0
+  let nearestDistance = Infinity
+  cards.forEach((card, index) => {
+    const bounds = card.getBoundingClientRect()
+    const distance = Math.abs(bounds.top + bounds.height / 2 - focusY)
+    if (distance < nearestDistance) {
+      nearest = index
+      nearestDistance = distance
+    }
+  })
+  activeStep.value = nearest
+}
+
+const scheduleProcessUpdate = () => {
+  if (!processFrame) processFrame = requestAnimationFrame(updateActiveStep)
+}
 const years = ref(0)
 let observers: IntersectionObserver[] = []
 
@@ -123,19 +161,25 @@ onMounted(() => {
   }), { threshold: .14 })
   document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element))
 
-  const stepObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
-    if (entry.isIntersecting) activeStep.value = Number((entry.target as HTMLElement).dataset.step)
-  }), { rootMargin: '-35% 0px -45% 0px' })
-  document.querySelectorAll('.process-step').forEach((element) => stepObserver.observe(element))
-
+  window.addEventListener('scroll', scheduleProcessUpdate, { passive: true })
+  window.addEventListener('resize', scheduleProcessUpdate)
+  processResizeObserver = new ResizeObserver(scheduleProcessUpdate)
+  if (processSteps.value) processResizeObserver.observe(processSteps.value)
+  updateActiveStep()
   const stats = document.querySelector('.stats-section')
   const statsObserver = new IntersectionObserver(([entry]) => {
-    if (entry?.isIntersecting) { animateNumber(100, (value) => clients.value = value); animateNumber(10, (value) => years.value = value); statsObserver.disconnect() }
+    if (entry?.isIntersecting) { animateNumber(15, (value) => years.value = value); statsObserver.disconnect() }
   })
   if (stats) statsObserver.observe(stats)
-  observers = [revealObserver, stepObserver, statsObserver]
+  observers = [revealObserver, statsObserver]
 })
-onBeforeUnmount(() => observers.forEach((observer) => observer.disconnect()))
+onBeforeUnmount(() => {
+  observers.forEach((observer) => observer.disconnect())
+  processResizeObserver?.disconnect()
+  window.removeEventListener('scroll', scheduleProcessUpdate)
+  window.removeEventListener('resize', scheduleProcessUpdate)
+  cancelAnimationFrame(processFrame)
+})
 
 const benefits = [
   { icon: '◇', title: 'Kvalitatīvs rezultāts', text: 'Precīzs izpildījums' },
@@ -144,26 +188,20 @@ const benefits = [
   { icon: '⌖', title: 'Visa Latvija', text: 'Rīga un reģioni' },
 ]
 
-const services = [
-  { title: 'Parketa ieklāšana', text: 'Klasisks un ilgtspējīgs risinājums jūsu mājām un birojam.' },
-  { title: 'Vinila ieklāšana', text: 'Praktisks, izturīgs un moderns risinājums jebkurai telpai.' },
-  { title: 'Grīdu restaurācija', text: 'Atjaunojam un pagarinām esošās grīdas kalpošanas laiku.' },
-]
-
 const steps = [
-  { number: '01', title: 'Pamatnes pārbaude', text: 'Novērtējam līdzenumu, mitrumu un esošās grīdas stāvokli, lai izvēlētos drošu risinājumu.' },
-  { number: '02', title: 'Grīdas sagatavošana', text: 'Gruntējam, špaktelējam un slīpējam pamatni līdz tā ir gatava precīzai ieklāšanai.' },
-  { number: '03', title: 'Materiāla ieklāšana', text: 'Ieklājam parketu vai vinilu, ievērojot materiāla tehnoloģiju un telpas ģeometriju.' },
-  { number: '04', title: 'Apdare un nodošana', text: 'Uzstādām grīdlīstes, veicam pēdējo pārbaudi un nododam tīru, gatavu rezultātu.' },
-]
+  { number: '01', image: publicAsset('/images/process/inspection-v1.png'), title: 'Pamatnes pārbaude', text: 'Novērtējam līdzenumu, mitrumu un esošās grīdas stāvokli, lai izvēlētos drošu risinājumu.' },
+  { number: '02', image: publicAsset('/images/process/preparation-v1.png'), title: 'Grīdas sagatavošana', text: 'Gruntējam, špaktelējam un slīpējam pamatni līdz tā ir gatava precīzai ieklāšanai.' },
+  { number: '03', image: publicAsset('/images/process/installation-v3.webp'), title: 'Materiāla ieklāšana', text: 'Ieklājam parketu vai vinilu, ievērojot materiāla tehnoloģiju un telpas ģeometriju.' },
+  { number: '04', image: publicAsset('/images/process/finishing-v1.png'), title: 'Apdare un nodošana', text: 'Uzstādām grīdlīstes, veicam pēdējo pārbaudi un nododam tīru, gatavu rezultātu.' },
+] as const
+
+const currentStep = computed(() => steps[activeStep.value] ?? steps[0])
 </script>
 
 <style scoped>
 .eyebrow { color: #98724f; font-size: .75rem; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; }
 .section-title { margin-top: .55rem; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 650; line-height: 1.08; letter-spacing: -.04em; }
-.service-card { position: relative; display: flex; min-height: 330px; overflow: hidden; border-radius: 1rem; background: #ddd; }
 .reveal { opacity: 0; transform: translateY(38px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.75,.25,1); }
 .reveal.is-visible { opacity: 1; transform: none; }
-.floor-grid { background: repeating-linear-gradient(45deg, transparent 0 38px, rgba(210,175,138,.65) 39px 41px), repeating-linear-gradient(-45deg, transparent 0 38px, rgba(210,175,138,.35) 39px 41px); }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 </style>

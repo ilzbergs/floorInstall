@@ -1,47 +1,60 @@
 <template>
-  <section class="bg-[#F5F0E1] py-16">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-[#5C3A21] font-heading mb-12">Mūsu Pakalpojumi</h2>
+  <section class="bg-[#F8F5EF] px-5 py-16 text-left sm:py-20">
+    <div class="mx-auto max-w-7xl">
+      <div class="max-w-2xl">
+        <p class="text-xs font-bold uppercase tracking-[.24em] text-[#98724F]">
+          Risinājumi katrai telpai
+        </p>
+        <h1 class="mt-3 text-4xl font-semibold tracking-[-.04em] text-[#5C3A21] sm:text-5xl">
+          Pakalpojumi, kas sākas ar labu pamatu.
+        </h1>
+        <p class="mt-5 max-w-xl text-base leading-7 text-black/60">
+          Izvēlieties sev piemērotāko grīdas risinājumu un apskatiet, kā mēs to īstenojam no pirmās
+          konsultācijas līdz gatavam rezultātam.
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-
-        <div class="relative bg-linear-to-br from-[#D6C4A8] to-[#A9745B] p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
-          <img src="../../public/images/hero.jpg" alt="Parketa ieklāšana" class="mx-auto mb-4 w-16 h-16" />
-          <h3 class="text-xl font-semibold text-[#5C3A21] mb-2">Parketa ieklāšana</h3>
-          <p class="text-[#5C3A21] mb-4">
-            Tradicionālā koka parketa ieklāšana, pulēšana un apkope, lai iegūtu dabisku izskatu un ilgmūžību.
-          </p>
-          <button class="px-4 py-2 bg-[#8B5E3C] hover:bg-[#6F4528] text-white rounded shadow transition">
-            Uzzināt vairāk
-          </button>
-        </div>
-
-
-        <div class="relative bg-linear-to-br from-[#EADFCC] to-[#D8B58A] p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
-          <img src="../../public/images/hero.jpg" alt="Vinila ieklāšana" class="mx-auto mb-4 w-16 h-16" />
-          <h3 class="text-xl font-semibold text-[#5C3A21] mb-2">Vinila ieklāšana</h3>
-          <p class="text-[#5C3A21] mb-4">
-            Praktiskas, ūdensizturīgas vinila grīdas, kas ir izturīgas, viegli kopjamas un modernas dizaina iespējas.
-          </p>
-          <button class="px-4 py-2 bg-[#8B5E3C] hover:bg-[#6F4528] text-white rounded shadow transition">
-            Uzzināt vairāk
-          </button>
-        </div>
-
-
-        <div class="relative bg-linear-to-br from-[#CBB892] to-[#A9745B] p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
-          <img src="../../public/images/hero.jpg" alt="Grīdas restaurācija" class="mx-auto mb-4 w-16 h-16" />
-          <h3 class="text-xl font-semibold text-[#5C3A21] mb-2">Grīdas restaurācija</h3>
-          <p class="text-[#5C3A21] mb-4">
-            Pulēšana, lakošana un bojātu vietu remonts, lai jūsu grīda izskatītos kā jauna un kalpotu ilgāk.
-          </p>
-          <button class="px-4 py-2 bg-[#8B5E3C] hover:bg-[#6F4528] text-white rounded shadow transition">
-            Uzzināt vairāk
-          </button>
-        </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <article
+          v-for="(service, index) in services"
+          :key="service.slug"
+          class="group overflow-hidden rounded-[1.35rem] border border-[#E0D5C7] bg-white shadow-[0_16px_35px_-28px_rgba(58,38,20,.65)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_24px_45px_-25px_rgba(58,38,20,.65)]"
+        >
+          <div class="relative aspect-4/3 overflow-hidden bg-[#4B3829]">
+            <img
+              :src="service.image"
+              :alt="service.title"
+              loading="lazy"
+              decoding="async"
+              class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent"
+            ></div>
+            <span class="absolute bottom-4 left-5 text-xs font-bold tracking-[.22em] text-[#F1C189]"
+              >0{{ index + 1 }}</span
+            >
+          </div>
+          <div class="p-6 sm:p-7">
+            <h2 class="text-2xl font-semibold tracking-[-.02em] text-[#5C3A21]">
+              {{ service.title }}
+            </h2>
+            <p class="mt-3 text-sm leading-6 text-black/60">{{ service.shortDescription }}</p>
+            <router-link
+              :to="{ name: 'service-detail', params: { slug: service.slug } }"
+              class="mt-6 inline-flex items-center gap-2 font-semibold text-[#7F5D3E] transition hover:text-[#5C3A21]"
+              >Uzzināt vairāk
+              <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5"
+                >→</span
+              ></router-link
+            >
+          </div>
+        </article>
       </div>
     </div>
   </section>
 </template>
 
-
+<script setup lang="ts">
+import { services } from '../data/services'
+</script>
