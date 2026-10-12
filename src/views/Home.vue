@@ -23,7 +23,7 @@
     <div class="reveal mx-auto max-w-7xl px-5 pb-20 text-center lg:px-8">
       <ServiceSectionCard :services="featuredServices" />
       <router-link to="/services" class="inline-flex font-semibold text-[#7F5D3E] hover:underline">
-        Skatīt visus pakalpojumus →
+        Skatīt visus pakalpojumiņus →
       </router-link>
     </div>
 
