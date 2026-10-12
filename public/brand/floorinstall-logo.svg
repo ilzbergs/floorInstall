@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 96" role="img" aria-labelledby="title description">
+  <title id="title">FloorInstall</title>
+  <desc id="description">Trīs stilizēti koka grīdas dēļi un uzņēmuma nosaukums FloorInstall</desc>
+
+  <g stroke="#3B2B20" stroke-width="3" stroke-linejoin="round">
+    <path fill="#D5A06E" d="M5 43 39 9h22L27 43Z"/>
+    <path fill="#C58B57" d="m27 62 34-34h22L49 62Z"/>
+    <path fill="#B97945" d="m49 81 34-34h22L71 81Z"/>
+  </g>
+
+  <g fill="none" stroke="#8B5B37" stroke-width="2" stroke-linecap="round" opacity=".72">
+    <path d="M16 39c8-4 15-12 22-20 4-4 8-6 13-7"/>
+    <path d="M39 57c8-5 14-12 22-19 4-4 8-6 13-7"/>
+    <path d="M61 76c7-5 14-12 21-19 4-4 8-6 13-7"/>
+  </g>
+
+  <text x="123" y="61" fill="#2F2A25" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="-1.8">Floor<tspan fill="#98724F">Install</tspan></text>
+</svg>
