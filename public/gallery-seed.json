@@ -82,5 +82,27 @@
         "alt": "Pabeigta grīdlīstu apdare"
       }
     ]
+  },
+  {
+    "id": "francu-skujinas-parkets",
+    "title": "Franču skujiņas parkets — pabeigts projekts",
+    "summary": "Dabīga ozola parkets franču skujiņas rakstā ar rūpīgi saskaņotiem savienojumiem.",
+    "description": "Pabeigta ozola parketa ieklāšana franču skujiņas rakstā. Dēļi un savienojumi rūpīgi saskaņoti, lai raksts veidotu vienmērīgu un izteiksmīgu kopskatu visā telpā.",
+    "categories": [
+      "Parkets",
+      "Franču skujiņa"
+    ],
+    "published": true,
+    "cover": "/images/projects/francu-skujinas-parkets/01.webp",
+    "photos": [
+      {
+        "src": "/images/projects/francu-skujinas-parkets/01.webp",
+        "alt": "Franču skujiņas parkets pie kamīna"
+      },
+      {
+        "src": "/images/projects/francu-skujinas-parkets/02.webp",
+        "alt": "Pabeigts franču skujiņas parkets telpā"
+      }
+    ]
   }
 ]
