@@ -1,5 +1,6 @@
 <template>
-  <div class="flex min-h-screen flex-col">
+  <MaintenancePage v-if="showMaintenancePage" />
+  <div v-else class="flex min-h-screen flex-col">
     <Header />
     <main class="w-full flex-1 bg-[#f5f1e8]">
       <router-view />
@@ -11,6 +12,13 @@
 <script setup lang="ts">
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+import MaintenancePage from './components/MaintenancePage.vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const isMaintenanceMode = import.meta.env.VITE_SITE_MODE === 'maintenance'
+const route = useRoute()
+const showMaintenancePage = computed(() => isMaintenanceMode && route.path !== '/privacy-policy')
 </script>
 
 <style>

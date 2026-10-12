@@ -11,18 +11,18 @@ Atver terminālī norādīto adresi (parasti http://localhost:5173).
 
 ## GitHub Pages testa versija
 
-- Avota zars: `codex/github-pages-preview`.
-- Workflow: `.github/workflows/pages.yml`.
-- Repozitorijā Settings → Pages → Source jābūt **GitHub Actions**.
-- Testa adrese pēc sekmīgas publicēšanas: https://ilzbergs.github.io/floorInstall/
+- Publicētais statiskais zars: `gh-pages`.
+- Repozitorijā Settings → Pages → Source ir **Deploy from a branch**; zars `gh-pages`, mape `/(root)`.
+- Testa adrese: https://ilzbergs.github.io/floorInstall/
 - Testa lapās izmanto hash maršrutus, piemēram, `/floorInstall/#/gallery`.
 - `npm run build:github` izveido testa būvējumu mapē `dist`.
 - Testa versijai ir `noindex` un aizliegta indeksēšana robots.txt; tā nav privāta lapa.
-- Lai atjauninātu testu, nosūti izmaiņas testa zarā. `main` netiek automātiski publicēts.
-
 ## nano.lv / cPanel / floorinstall.lv
 
-Šis ir statisks Vue/Vite projekts. Serverī nav jāpalaiž `npm run dev`, Node.js process vai datubāze. Galeriju šajā versijā veido `gallery-seed.json` un attēlu faili. Kontaktforma atver apmeklētāja e-pasta programmu; tā nesūta e-pastu caur serveri.
+Šis ir Vue/Vite projekts ar vienu nelielu PHP kontaktformas saņēmēju. Serverī nav jāpalaiž `npm run dev`, Node.js process vai datubāze. Galeriju šajā versijā veido `gallery-seed.json` un attēlu faili. `contact.php` izmanto cPanel PHP pasta funkciju un nosūta formas ziņas uz `info@floorinstall.lv`.
+### Pagaidu “drīzumā” lapa
+
+Kamēr pilnā lapa ir izstrādē, izveido produkcijas būvējumu ar `npm run build:maintenance`. Tas parāda FloorInstall zīmola lapu ar kontakttālruni un e-pastu, bet slēpj pilno vietni. Lai atkal publicētu pilno lapu, lieto parasto `npm run build`.
 
 1. Datorā palaid `npm ci`, pēc tam `npm run build` (nevis `build:github`).
 2. cPanel → **Domains** atrodi `floorinstall.lv` un pārbaudi **Document Root**. Galvenajam domēnam tas parasti ir `public_html`, bet izmanto panelī norādīto mapi.

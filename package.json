@@ -14,7 +14,8 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix --cache",
     "format": "prettier --write --experimental-cli src/",
-    "build:github": "npm run type-check && vite build --mode github && node scripts/prepare-pages.mjs"
+    "build:github": "npm run type-check && vite build --mode github && node scripts/prepare-pages.mjs",
+    "build:maintenance": "npm run type-check && vite build --mode maintenance"
   },
   "dependencies": {
     "@vueuse/motion": "^3.0.3",

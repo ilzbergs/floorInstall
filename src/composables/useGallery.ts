@@ -16,7 +16,10 @@ export function useGallery() {
     error.value = ''
     pending = (async () => {
       try {
-        const response = await fetch(publicAsset('/gallery-seed.json'), { headers: { Accept: 'application/json' } })
+        const response = await fetch(publicAsset('/gallery-seed.json'), {
+          cache: 'no-store',
+          headers: { Accept: 'application/json' },
+        })
         if (!response.ok) throw new Error('Galeriju šobrīd neizdevās ielādēt.')
         const data: unknown = await response.json()
         if (!Array.isArray(data)) throw new Error('Galerijas atbilde nav derīga.')

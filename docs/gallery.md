@@ -7,11 +7,9 @@ Projektu saraksts atrodas public/gallery-seed.json. Sākumlapa un galerija izman
 2. JSON sarakstam pievienojiet projekta ierakstu, izmantojot pirmo projektu kā piemēru.
 3. id jābūt unikālam, ar latīņu burtiem, cipariem un defisēm; tas veido projekta lapas adresi.
 4. title — nosaukums; summary — īss kartītes apraksts; description — pilnais apraksts.
-5. flooring — seguma veids; work — paveikto darbu saraksts. Atsevišķas materiālu sadaļas nav.
-6. categories var saturēt vienu vai vairākas vērtības: Parkets, Vinils, Grīdlīstes.
-7. cover — vāka bildes ceļš; vēlams izvēlēties gatavā rezultāta kopskatu.
-8. photos sarakstā norādiet src, alt (attēla saturs), caption (īss paraksts) un stage.
-9. stage: Pirms, Darba laikā vai Rezultāts. Bilžu secību nosaka secība sarakstā.
+5. categories var saturēt vienu vai vairākas vērtības: Parkets, Vinils, Grīdlīstes.
+6. cover — vāka bildes ceļš; vēlams izvēlēties gatavā rezultāta kopskatu.
+7. photos sarakstā norādiet tikai src un alt. Bilžu secību nosaka secība sarakstā.
 
 public mapes faili ir publiski pieejami. published: false paslēpj kartīti, bet neaizsargā failus vai aprakstu. Konfidenciālu vai vēl nepublicējamu saturu šajā mapē neievietojiet.
 
