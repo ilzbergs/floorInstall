@@ -34,6 +34,19 @@ Kamēr pilnā lapa ir izstrādē, izveido produkcijas būvējumu ar `npm run bui
 8. Pārbaudi https://www.floorinstall.lv/, `/services`, `/gallery` un `/contact`, kā arī tiešu galerijas projekta adresi. Pārlādē apakšlapu ar F5: `.htaccess` jāatgriež Vue sākumlapa, nevis 404.
 9. Pēc veiksmīgas izpakošanas izdzēs augšupielādēto ZIP no publiskās mapes. Ja ir CDN vai pārlūka kešatmiņa, notīri to.
 
+## Automātiska publicēšana no GitHub uz Nano
+
+Repozitorijā ir workflow `.github/workflows/deploy-production.yml`. Tas palaižas pēc `push` uz `main` vai manuāli GitHub sadaļā **Actions → Publish production site → Run workflow**.
+
+Pirms pirmās palaišanas repozitorija **Settings → Secrets and variables → Actions** sadaļā jāpievieno šādi repository secrets:
+
+- `FTP_SERVER` — Nano FTP servera adrese, ko norāda cPanel vai nano.lv atbalsts;
+- `FTP_USERNAME` — cPanel FTP lietotājs;
+- `FTP_PASSWORD` — šī FTP lietotāja parole;
+- `FTP_REMOTE_DIR` — domēna dokumentu saknes ceļš, piemēram, `/public_html/`.
+
+Workflow instalē atkarības, palaiž tipa pārbaudi un būvē projektu. Ja pārbaude neizdodas, faili netiek publicēti. Ja tā izdodas, `dist/` saturs tiek augšupielādēts Nano serverī, ieskaitot `gallery-seed.json`, WebP attēlus, `.htaccess` un `contact.php`.
+
 ZIP ir būvēts domēna saknei, nevis `floorinstall.lv/test/` apakšmapei. Atsevišķam testam cPanel izmanto apakšdomēnu ar savu Document Root.
 
 ## Avoti
