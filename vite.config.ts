@@ -9,6 +9,14 @@ export default defineConfig(({ mode }) => ({
   base: mode === 'github' ? '/floorInstall/' : '/',
   plugins: [
     vue(),
+    {
+      name: 'noindex-non-production',
+      transformIndexHtml(html) {
+        return mode === 'github' || mode === 'maintenance'
+          ? html.replace('</head>', '<meta name="robots" content="noindex, nofollow" /></head>')
+          : html
+      },
+    },
 
     tailwindcss(),
   ],

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory, createMemoryHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Services from '../views/Services.vue'
 import ServiceDetail from '../views/ServiceDetail.vue'
@@ -16,10 +16,11 @@ const routes = [
   { path: '/contact', name: 'contact', component: Contact },
   { path: '/privacy-policy', name: 'privacy-policy', component: PrivacyPolicy },
   { path: '/terms', name: 'terms', component: Terms },
+  { path: '/:pathMatch(.*)*', component: () => import('../views/NotFound.vue') },
 ]
 
 const router = createRouter({
-  history: import.meta.env.MODE === 'github'
+  history: import.meta.env.SSR ? createMemoryHistory() : import.meta.env.MODE === 'github'
     ? createWebHashHistory(import.meta.env.BASE_URL)
     : createWebHistory(import.meta.env.BASE_URL),
   routes,

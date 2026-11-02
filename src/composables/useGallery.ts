@@ -2,11 +2,25 @@ import { publicAsset } from '@/utils/publicAsset'
 import { ref } from 'vue'
 import type { GalleryProject } from '@/types/gallery'
 
-const projects = ref<GalleryProject[]>([])
+// Reuse build-time data so project pages do not briefly become "not found".
+const initialProjects = readPrerenderedProjects()
+const projects = ref<GalleryProject[]>(initialProjects || [])
 const loading = ref(false)
 const error = ref('')
 let pending: Promise<void> | undefined
-let loaded = false
+let loaded = initialProjects !== null
+
+function readPrerenderedProjects(): GalleryProject[] | null {
+  if (typeof document === 'undefined') return null
+  const content = document.getElementById('gallery-state')?.textContent
+  if (!content) return null
+  try {
+    const data = JSON.parse(content)
+    return Array.isArray(data) ? data as GalleryProject[] : null
+  } catch {
+    return null
+  }
+}
 
 export function useGallery() {
   const load = async () => {
