@@ -24,10 +24,10 @@
 
         <div class="hero-reveal mt-9 flex flex-col gap-3 sm:flex-row">
           <router-link
-            to="/price-estimate"
+            to="/contact"
             class="inline-flex items-center justify-center gap-3 rounded-xl bg-[#A47D58] px-6 py-3.5 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#8B6747]"
           >
-            Aprēķināt cenu <span>→</span>
+            Saņemt piedāvājumu <span>→</span>
           </router-link>
           <router-link
             to="/gallery"
@@ -87,4 +87,5 @@ onBeforeUnmount(() => window.removeEventListener('scroll', updateHero))
 }
 @media (prefers-reduced-motion: reduce) { .hero-image, .hero-copy { transform: none; opacity: 1; } .hero-reveal { animation: none; } }
 </style>
+
 

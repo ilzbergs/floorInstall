@@ -14,7 +14,6 @@
         <router-link to="/services" class="nav-link" :class="{ 'is-active': isServicesActive }">Pakalpojumi</router-link>
         <router-link to="/gallery" class="nav-link" :class="{ 'is-active': isGalleryActive }">Galerija</router-link>
         <router-link to="/#par-mums" class="nav-link" :class="{ 'is-active': isAboutActive }">Par mums</router-link>
-        <router-link to="/price-estimate" class="nav-link" :class="{ 'is-active': isPriceActive }">Cenas</router-link>
         <router-link to="/contact" class="nav-link" :class="{ 'is-active': isContactActive }">Kontakti</router-link>
       </nav>
 
@@ -75,7 +74,6 @@ const isServicesActive = computed(() => route.path.startsWith('/services'))
 const isGalleryActive = computed(() => route.path === '/gallery')
 const isAboutActive = computed(() => route.path === '/' && route.hash === '#par-mums')
 const isContactActive = computed(() => route.path === '/contact')
-const isPriceActive = computed(() => route.path === '/price-estimate')
 let scrollAnchor = 0
 
 const updateHeader = () => {
@@ -144,6 +142,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', updateHeader))
   background: #eee7dc;
 }
 </style>
+
 
 
 
