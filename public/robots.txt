@@ -3,5 +3,3 @@ Allow: /
 
 Sitemap: https://floorinstall.lv/sitemap.xml
 
-Agentmap: https://floorinstall.lv/.well-known/ai-catalog.json
-
