@@ -277,13 +277,13 @@ const benefits = [
 const steps = [
   {
     number: '01',
-    image: publicAsset('/images/process/inspection-v1.png'),
+    image: publicAsset('/images/process/inspection-v1.webp'),
     title: 'Pamatnes pārbaude',
     text: 'Novērtējam līdzenumu, mitrumu un esošās grīdas stāvokli, lai izvēlētos drošu risinājumu.',
   },
   {
     number: '02',
-    image: publicAsset('/images/process/preparation-v1.png'),
+    image: publicAsset('/images/process/preparation-v1.webp'),
     title: 'Grīdas sagatavošana',
     text: 'Gruntējam, špaktelējam un slīpējam pamatni līdz tā ir gatava precīzai ieklāšanai.',
   },
@@ -295,7 +295,7 @@ const steps = [
   },
   {
     number: '04',
-    image: publicAsset('/images/process/finishing-v1.png'),
+    image: publicAsset('/images/process/finishing-v1.webp'),
     title: 'Apdare un nodošana',
     text: 'Uzstādām grīdlīstes, veicam pēdējo pārbaudi un nododam tīru, gatavu rezultātu.',
   },

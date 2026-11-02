@@ -1,7 +1,7 @@
 <template>
   <section ref="hero" class="hero relative isolate min-h-[680px] overflow-hidden bg-[#242321]">
     <img
-      :src="publicAsset('/images/hero.jpg')"
+      :src="publicAsset('/images/hero.webp')"
       alt="Kvalitatīvi ieklāta koka grīda"
       fetchpriority="high"
       decoding="async"
@@ -24,10 +24,10 @@
 
         <div class="hero-reveal mt-9 flex flex-col gap-3 sm:flex-row">
           <router-link
-            to="/contact"
+            to="/price-estimate"
             class="inline-flex items-center justify-center gap-3 rounded-xl bg-[#A47D58] px-6 py-3.5 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#8B6747]"
           >
-            Saņemt piedāvājumu <span>→</span>
+            Aprēķināt cenu <span>→</span>
           </router-link>
           <router-link
             to="/gallery"
@@ -87,3 +87,4 @@ onBeforeUnmount(() => window.removeEventListener('scroll', updateHero))
 }
 @media (prefers-reduced-motion: reduce) { .hero-image, .hero-copy { transform: none; opacity: 1; } .hero-reveal { animation: none; } }
 </style>
+

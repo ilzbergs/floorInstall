@@ -6,6 +6,7 @@ import Gallery from '../views/Gallery.vue'
 import Contact from '../views/Contact.vue'
 import PrivacyPolicy from '../views/PrivacyPolicy.vue'
 import Terms from '../views/Terms.vue'
+import QuoteAssistant from '../views/QuoteAssistant.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -16,6 +17,7 @@ const routes = [
   { path: '/contact', name: 'contact', component: Contact },
   { path: '/privacy-policy', name: 'privacy-policy', component: PrivacyPolicy },
   { path: '/terms', name: 'terms', component: Terms },
+  { path: '/price-estimate', name: 'price-estimate', component: QuoteAssistant },
 ]
 
 const router = createRouter({
@@ -31,3 +33,4 @@ const router = createRouter({
 })
 
 export default router
+

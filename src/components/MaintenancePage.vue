@@ -73,7 +73,7 @@ function rejectAnalytics() {
   position: absolute;
 }
 .maintenance-page__image {
-  background: url('/images/hero.jpg') center / cover no-repeat;
+  background: url('/images/hero.webp') center / cover no-repeat;
   filter: saturate(.72);
   transform: scale(1.03);
 }
