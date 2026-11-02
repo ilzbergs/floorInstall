@@ -1,5 +1,46 @@
 [
   {
+    "id": "ozola-parketa-limesana-un-ellosana",
+    "title": "Ozola parketa ieklāšana un eļļošana",
+    "summary": "No pamatnes sagatavošanas līdz pilnībā pielīmētam ozola parketam un apstrādei ar cietā vaska eļļu.",
+    "description": "Veikta pamatnes sagatavošana un izlīdzināšana, pēc tam dabīga ozolkoka parkets pilnībā pielīmēts pie sagatavotās pamatnes. Rūpīgi izveidots parketa savienojums ar flīžu segumu. Noslēgumā parkets apstrādāts ar cietā vaska eļļu, izceļot koka dabisko rakstu un nodrošinot papildu virsmas aizsardzību. Fotogrāfijās redzama darbu secība — sagatavotā pamatne, parketa līmēšana, ieklātais segums un eļļas uzklāšana.",
+    "categories": [
+      "Parkets"
+    ],
+    "published": true,
+    "cover": "/images/projects/ozola-parketa-limesana-un-ellosana/IMG_20261027_180523.jpg",
+    "photos": [
+      {
+        "src": "/images/projects/ozola-parketa-limesana-un-ellosana/IMG_20261026_091140.jpg",
+        "alt": "Sagatavota un lokāli izlīdzināta pamatne pirms parketa ieklāšanas"
+      },
+      {
+        "src": "/images/projects/ozola-parketa-limesana-un-ellosana/IMG_20261026_105324.jpg",
+        "alt": "Ozola parketa līmēšana pie sagatavotās pamatnes"
+      },
+      {
+        "src": "/images/projects/ozola-parketa-limesana-un-ellosana/IMG_20261026_112009.jpg",
+        "alt": "Parketa dēļu ieklāšanas process telpā"
+      },
+      {
+        "src": "/images/projects/ozola-parketa-limesana-un-ellosana/IMG_20261027_180523.jpg",
+        "alt": "Ieklātā ozola parketa kopskats pirms apstrādes ar cietā vaska eļļu"
+      },
+      {
+        "src": "/images/projects/ozola-parketa-limesana-un-ellosana/IMG_20261027_180600.jpg",
+        "alt": "Ozola parketa savienojums ar flīžu segumu"
+      },
+      {
+        "src": "/images/projects/ozola-parketa-limesana-un-ellosana/IMG_20261027_185127.jpg",
+        "alt": "Ozola parketa apstrāde ar cietā vaska eļļu"
+      },
+      {
+        "src": "/images/projects/ozola-parketa-limesana-un-ellosana/IMG_20261027_185604.jpg",
+        "alt": "Ozola parketa virsma pēc cietā vaska eļļas uzklāšanas"
+      }
+    ]
+  },
+  {
     "id": "ozola-parkets-24cm",
     "title": "Ozola parketa ieklāšana un grīdlīstu apdare",
     "summary": "24 cm plats divslāņu ozola parkets un baltas grīdlīstes.",
