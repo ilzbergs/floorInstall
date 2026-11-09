@@ -1,5 +1,7 @@
 # Tehniskais SEO
 
+Produkcijas būve pievieno 301 pāradresāciju no HTTP un www versijām uz https://floorinstall.lv, saglabājot lapas ceļu un vaicājuma parametrus. Noteikums darbojas tikai FloorInstall domēniem, pirms iekšējās HTML pārrakstīšanas. TLS terminēšanai jābūt korekti atspoguļotai Apache HTTPS mainīgajā; ja hostings izmanto ārēju reverso starpnieku, jāpārbauda hostinga konfigurācija, lai neveidotos cikls.
+
 Produkcijai izmantojiet npm run build (nevis tikai build-only). Pēc Vite būvēšanas scripts/build-seo.mjs sagatavo pilnus HTML failus galvenajām, pakalpojumu un publicēto projektu lapām, automātisku sitemap.xml un 404.html.
 
 Saturs tiek renderēts no tiem pašiem Vue komponentiem un datiem kā pārlūkā. Jauns publicēts projekts vai pakalpojums nākamajā būvē automātiski nonāk vietnes kartē un iegūst savu HTML.

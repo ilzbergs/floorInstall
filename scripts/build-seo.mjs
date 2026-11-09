@@ -37,6 +37,11 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  # Normalize the public domain before any internal page rewrites.
+  RewriteCond %{HTTP_HOST} ^(?:www\\.)?floorinstall\\.lv(?::[0-9]+)?$ [NC]
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} ^www\\.floorinstall\\.lv(?::[0-9]+)?$ [NC]
+  RewriteRule ^ https://floorinstall.lv%{REQUEST_URI} [R=301,L,NE]
   RewriteCond %{REQUEST_FILENAME}/index.html -f
   RewriteRule ^(.+?)/?$ $1/index.html [L]
   RewriteCond %{REQUEST_FILENAME} !-f
